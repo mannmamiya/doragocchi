@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>たまごっちゲーム</title>
+
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+<!-- タイトル画面 -->
+<div id="titleScreen">
+    <h1>たまごっちゲーム<br><br></h1>
+    <div id="character">
+        <img src="picture/tamago.png" id="egg">
+    </div>
+    <p>ある生き物をたまごから育てよう！ゲームをやめても時間はたっているから注意！</p>
+    <p>ご飯：与えると体力を回復させる</p>
+    <p>寝る：寝かせてストレスを軽減させる</p>
+    <button onclick="startGame()">プレイする！</button>
+</div>
+
+<!-- ゲーム本体 -->
+<div id="gameScreen" style="display: none;">
+    <h1>たまご</h1>
+
+    <div id="character">
+        <img src="picture/move_egg.gif" id="moveegg">
+    </div>
+
+    <div id="status">
+        <p>体力: <span id="health">100</span></p>
+        <p>ストレス: <span id="stress">0</span></p>
+        <p>経験値: <span id="exp">0</span></p>
+    </div>
+
+    <p id="message"></p>    <!--生き物からのコメント-->
+    <button onclick="feed()">ごはん</button>
+    <button onclick="sleep()">ねる</button>
+</div>
+
+<!-- ゲームオーバー画面 -->
+<div id="gameOverScreen" style="display: none;">
+    <h1>死んじゃった…</h1>
+    <div id="character">
+        <img src="picture/death.png" id="death">
+    </div>
+    <p>もう一度プレイしますか？</p>
+
+    <button onclick="restartGame()">最初から</button>
+</div>
+
+
+<script src="tamago.js"></script>
+</body>
